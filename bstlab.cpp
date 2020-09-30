@@ -38,9 +38,10 @@ BstNode* findInorderSuccessor(BstNode* rootref){
 	if(temp == NULL){
 		return temp;
 	}
-	if(temp->left == NULL){
+	if(temp->right == NULL){
 		return temp;
 	}
+	temp=temp->right;
 	while(temp->left!=NULL){
 		temp = temp -> left;
 	}
@@ -52,9 +53,10 @@ BstNode* findInorderPredecessor(BstNode* rootref){
 	if(temp == NULL){
 		return temp;
 	}
-	if(temp->right == NULL){
-		return temp;
+	if(temp->left == NULL){
+		return temp->par;
 	}
+	temp=temp->left;
 	while(temp->right!=NULL){
 		temp = temp -> right;
 	}
